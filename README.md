@@ -1,4 +1,11 @@
-## Website Performance Optimization portfolio project
+## Website Performance Optimization 
+
+To achieve PageSpeed score of 90 or more on desktop and mobile devices:
+
+(1) I ensured that the CSS files were all minified and used in-line with the HTML documents.
+(2) I compressed and properly resized the images.
+(3) I ensured that the javascript files that were blocking ther endering path were loaded asynchronously.
+(4) I Slightly personalized the text on the headers of the pages.
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
