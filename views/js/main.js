@@ -531,33 +531,5 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-
-  // Here updates to increase the framerate per second.
-function updatePositions() {
-  frame++;
-  window.performance.mark("mark_start_frame");
-  //Check the scroll height from the top of our page and launch updatePosition fun.
-  scrollTop = window.scrollY / 1250;
-  
-  // Better alternative (for animations) to outdated setTimeout and setInterval methods that did not pay attention to the rendering pipeline. 
-  requestAnimationFrame(function() {
-    for (var i = 0; i < numPizzas; i++) {
-      var phase = Math.sin(scrollTop + (i % 5));
-
-      movingPizzas[i].style.transform = 'translate3D(' +
-        (((i % cols) * s) + 100 * phase) + 'px, ' +
-        (Math.floor(i / cols) * s) + 'px, ' +
-        '0px' + ')';
-    }
-  });
-
-  // User Timing API to the rescue again. Seriously, it's worth learning.
-  // Super easy to create custom metrics.
-  window.performance.mark("mark_end_frame");
-  window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
-  if (frame % 10 === 0) {
-    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
-    logAverageFrame(timesToUpdatePosition);
-  }
-}
+  updatePositions();
 });
