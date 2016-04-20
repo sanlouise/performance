@@ -12,6 +12,12 @@ Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
 */
 
+
+// Create array to hold pizzas on the menu.
+var pizzasOnMenu = [];
+// Array holding pizza scrolling elements.
+var scrollPizzas = [];
+
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
 var pizzaIngredients = {};
@@ -28,7 +34,7 @@ pizzaIngredients.meats = [
   "Tofu",
   "Bacon",
   "Canadian Bacon",
-  "Proscuitto",
+  "Prosciutto",
   "Italian Sausage",
   "Ground Beef",
   "Anchovies",
@@ -390,6 +396,9 @@ var pizzaElementGenerator = function(i) {
   ul.innerHTML = makeRandomPizza();
   pizzaDescriptionContainer.appendChild(ul);
   pizzaContainer.appendChild(pizzaDescriptionContainer);
+
+
+  pizzasOnMenu.push(pizzaContainer);
 
   return pizzaContainer;
 };
